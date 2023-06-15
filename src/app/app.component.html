@@ -11,30 +11,24 @@
 </div>
 <hr>
 <div *ngIf="direccionIp.ip">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-8">
-      <div class="card p-2 mt-3">
-        <div class="card-title">
-          <button (click)="localizacion()" class="btn btn-primary">Obtener localización</button>
-        </div>
-        <div class="card-body">
-          <ul *ngIf="geoLocalizacion" class="list-group">
-            <li class="list-group-item"><span class="h3">País:</span> {{ geoLocalizacion.country }}</li>
-            <li class="list-group-item"><span class="h3">Ciudad:</span> {{ geoLocalizacion.city }}</li>
-            <li class="list-group-item"><span class="h3">C.P:</span> {{ geoLocalizacion.postal }}</li>
-            <li class="list-group-item"><span class="h3">Región:</span> {{ geoLocalizacion.region }}</li>
-            <li class="list-group-item"><span class="h3">Ubicación: </span> <a class="btn btn-primary" target="_blank"
-                                                                               [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc"><i
-              class="bi bi-geo-alt-fill"> Ubicación</i></a></li>
-            <li class="list-group-item"><span class="h3">Datos ISP:</span> {{ geoLocalizacion.hostname }}</li>
-            <li class="list-group-item"><span class="h3">Zona horaria:</span> {{ geoLocalizacion.timezone }}</li>
-            <li class="list-group-item"><span class="h3">Compañía:</span> {{ geoLocalizacion.org }}</li>
-          </ul>
-        </div>
-      </div>
+  <div class="card p-2 mt-3">
+    <div class="card-title">
+      <button (click)="localizacion()" class="btn btn-primary">Obtener localización</button>
     </div>
-    <div class="col"></div>
+    <div class="card-body">
+      <ul *ngIf="geoLocalizacion" class="list-group">
+        <li class="list-group-item"><span class="h5">País:</span> {{ geoLocalizacion.country }}</li>
+        <li class="list-group-item"><span class="h5">Ciudad:</span> {{ geoLocalizacion.city }}</li>
+        <li class="list-group-item"><span class="h5">C.P:</span> {{ geoLocalizacion.postal }}</li>
+        <li class="list-group-item"><span class="h5">Región:</span> {{ geoLocalizacion.region }}</li>
+        <li class="list-group-item"><span class="h5">Ubicación: </span> <a class="btn btn-primary" target="_blank"
+                                                                           [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc"><i
+          class="bi bi-geo-alt-fill"> Ubicación</i></a></li>
+        <li class="list-group-item"><span class="h5">Datos ISP:</span> {{ geoLocalizacion.hostname }}</li>
+        <li class="list-group-item"><span class="h5">Zona horaria:</span> {{ geoLocalizacion.timezone }}</li>
+        <li class="list-group-item"><span class="h5">Compañía:</span> {{ geoLocalizacion.org }}</li>
+      </ul>
+    </div>
   </div>
 </div>
 

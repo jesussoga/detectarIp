@@ -15,7 +15,16 @@
     <button (click)="localizacion()" class="btn btn-primary">Obtener localización</button>
   </div>
   <div class="text-center">
-    <p class="h1">{{geoLocalizacion}}</p>
+    <ul *ngIf="geoLocalizacion" class="list-group">
+      <li class="list-group-item">País {{ geoLocalizacion.country }}</li>
+      <li class="list-group-item">Ciudad {{ geoLocalizacion.city }}</li>
+      <li class="list-group-item">C.P {{ geoLocalizacion.postal }}</li>
+      <li class="list-group-item">Zona horaria {{ geoLocalizacion.timezone }}</li>
+      <li class="list-group-item">Región {{ geoLocalizacion.region }}</li>
+      <li class="list-group-item">Localización {{ geoLocalizacion.loc }}</li>
+      <li class="list-group-item">Datos ISP {{ geoLocalizacion.hostname }}</li>
+      <li class="list-group-item">Compañía {{ geoLocalizacion.country }}</li>
+    </ul>
   </div>
 </div>
 

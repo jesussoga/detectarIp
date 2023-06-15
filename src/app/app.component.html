@@ -21,8 +21,7 @@
       <li class="list-group-item">C.P {{ geoLocalizacion.postal }}</li>
       <li class="list-group-item">Zona horaria {{ geoLocalizacion.timezone }}</li>
       <li class="list-group-item">Región {{ geoLocalizacion.region }}</li>
-      <li class="list-group-item">Localización {{ geoLocalizacion.loc }}</li>
-      <li class="list-group-item">Datos ISP {{ geoLocalizacion.hostname }}</li>
+      <li class="list-group-item">Ubicación <a class="btn btn-link" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" >{{geoLocalizacion.loc}}</a></li>      <li class="list-group-item">Datos ISP {{ geoLocalizacion.hostname }}</li>
       <li class="list-group-item">Compañía {{ geoLocalizacion.country }}</li>
     </ul>
   </div>

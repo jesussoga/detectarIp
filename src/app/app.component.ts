@@ -18,6 +18,7 @@ export class AppComponent {
     this.cargando = false;
   }
 
+
   public obtenerIp(): void{
     this.cargando = true;
       this.httpClient.get<DireccionIp>("https://api.ipify.org/?format=json").subscribe(

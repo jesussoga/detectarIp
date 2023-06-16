@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {DireccionIp} from "./models/direccionip.model";
 import {Localizacion} from "./models/localizacionip.model";
 
@@ -35,18 +35,16 @@ export class AppComponent {
       );
 
   }public localizacion(): void{
-      // this.httpClient.get<Localizacion>("https://ipinfo.io/" + this.direccionIp.ip + "/geo").subscribe(
-      this.httpClient.get<Localizacion>("https://ipinfo.io/188.85.194.218/geo").subscribe(
+      this.httpClient.get<Localizacion>("https://ipinfo.io/" + this.direccionIp.ip + "/geo").subscribe(
         {
           next: (datos: Localizacion)=> {
             console.log("Ya han llegado los datos", datos);
             this.geoLocalizacion = datos;
           },
-          error: (error)=> {
-            console.log("No han llegado los datos", error);
+          error: (error: HttpErrorResponse)=> {
+            console.error(error);
           }
         }
       );
   }
-
 }

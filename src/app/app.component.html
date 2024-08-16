@@ -16,80 +16,42 @@
   <div class="text-bg-warning text-center p-3">
     <table>
       <tr>
-        <td>
-          País
-        </td>
-        <td>
-          {{ geoLocalizacion.country }}
+        <td data-label="País">País</td>
+        <td data-label="Valor">{{ geoLocalizacion.country }}</td>
+      </tr>
+      <tr>
+        <td data-label="Ciudad">Ciudad</td>
+        <td data-label="Valor">{{ geoLocalizacion.city }}</td>
+      </tr>
+      <tr>
+        <td data-label="Código Postal">Código Postal</td>
+        <td data-label="Valor">{{ geoLocalizacion.postal }}</td>
+      </tr>
+      <tr>
+        <td data-label="Región">Región</td>
+        <td data-label="Valor">{{ geoLocalizacion.region }}</td>
+      </tr>
+      <tr>
+        <td data-label="Ubicación">Ubicación</td>
+        <td data-label="Valor">
+          <a class="btn btn-primary" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" >
+            <i class="bi bi-geo-alt-fill"> Ubicación</i>
+          </a>
         </td>
       </tr>
       <tr>
-        <td>
-          Ciudad
-        </td>
-        <td>
-          {{ geoLocalizacion.city }}
-        </td>
+        <td data-label="Datos ISP">Datos ISP</td>
+        <td data-label="Valor">{{ geoLocalizacion.hostname }}</td>
       </tr>
       <tr>
-        <td>
-          Código Postal
-        </td>
-        <td>
-          {{ geoLocalizacion.postal }}
-        </td>
+        <td data-label="Zona horaria">Zona horaria</td>
+        <td data-label="Valor">{{ geoLocalizacion.timezone }}</td>
       </tr>
       <tr>
-        <td>
-          Región
-        </td>
-        <td>
-          {{ geoLocalizacion.region }}
-        </td>
+        <td data-label="Compañía">Compañía</td>
+        <td data-label="Valor">{{ geoLocalizacion.org }}</td>
       </tr>
-      <tr>
-        <td>
-          Ubicación
-        </td>
-        <td>
-          <a class="btn btn-primary" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" ><i class="bi bi-geo-alt-fill"> Ubicación</i></a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Datos ISP
-        </td>
-        <td>
-          {{ geoLocalizacion.hostname }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Zona horaria
-        </td>
-        <td>
-          {{ geoLocalizacion.timezone }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Compañía
-        </td>
-        <td>
-          {{ geoLocalizacion.org }}
-        </td>
-      </tr>
-    </table>
-    <!-- <ul *ngIf="geoLocalizacion" class="list-group">
-      <li class="list-group-item"><span>País:</span> {{ geoLocalizacion.country }}</li>
-      <li class="list-group-item"><span>Ciudad:</span> {{ geoLocalizacion.city }}</li>
-      <li class="list-group-item"><span>C.P:</span> {{ geoLocalizacion.postal }}</li>
-      <li class="list-group-item"><span>Región:</span> {{ geoLocalizacion.region }}</li>
-      <li class="list-group-item"><span>Ubicación:</span> <a class="btn btn-primary" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" ><i class="bi bi-geo-alt-fill"> Ubicación</i></a></li>
-      <li class="list-group-item"><span>Datos ISP</span> {{ geoLocalizacion.hostname }}</li>
-      <li class="list-group-item"><span>Zona horaria:</span> {{ geoLocalizacion.timezone }}</li>
-      <li class="list-group-item"><span>Compañía:</span> {{ geoLocalizacion.org }}</li>
-    </ul> -->
+    </table>    
   </div>
 </div>
 

@@ -1,0 +1,54 @@
+/* Estilos básicos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .text-center {
+      text-align: center;
+    }
+  
+    .p-3 {
+      padding: 1rem;
+    }
+  
+    table td {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+  
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer {
+    margin-top: auto;
+    width: 100%;
+  }
+  

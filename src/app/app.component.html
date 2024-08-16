@@ -1,68 +1,100 @@
 <h1 class="text-bg-warning text-center p-3">Dirección IP</h1>
-
-<div class="d-flex justify-content-center my-4">
+<div>
   <button (click)="obtenerIp()" class="btn btn-primary">Obtener IP</button>
 </div>
-
 <div class="text-center" *ngIf="cargando">
   <img src="assets/img/loading.gif" alt="Imágen de cargando">
 </div>
-
-<div *ngIf="!cargando && direccionIp.ip" class="text-center">
+<div *ngIf="!cargando" class="text-center">
   <p class="h1">{{direccionIp.ip}}</p>
 </div>
-
 <hr>
-
 <div *ngIf="direccionIp.ip">
-  <div class="d-flex justify-content-center my-4">
+  <div>
     <button (click)="localizacion()" class="btn btn-primary">Obtener localización</button>
   </div>
-
-  <!-- Contenedor para centrar la tabla -->
-  <div class="container d-flex justify-content-center">
-    <div class="bg-light p-4 rounded" style="max-width: 600px; width: 100%;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td><strong>País</strong></td>
-            <td>{{ geoLocalizacion.country }}</td>
-          </tr>
-          <tr>
-            <td><strong>Ciudad</strong></td>
-            <td>{{ geoLocalizacion.city }}</td>
-          </tr>
-          <tr>
-            <td><strong>Código Postal</strong></td>
-            <td>{{ geoLocalizacion.postal }}</td>
-          </tr>
-          <tr>
-            <td><strong>Región</strong></td>
-            <td>{{ geoLocalizacion.region }}</td>
-          </tr>
-          <tr>
-            <td><strong>Ubicación</strong></td>
-            <td>
-              <a class="btn btn-primary btn-sm" target="_blank" 
-                 [href]="'https://www.google.es/maps/place/' + geoLocalizacion.loc">
-                <i class="bi bi-geo-alt-fill"> Ubicación</i>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Datos ISP</strong></td>
-            <td>{{ geoLocalizacion.hostname }}</td>
-          </tr>
-          <tr>
-            <td><strong>Zona horaria</strong></td>
-            <td>{{ geoLocalizacion.timezone }}</td>
-          </tr>
-          <tr>
-            <td><strong>Compañía</strong></td>
-            <td>{{ geoLocalizacion.org }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="text-bg-warning text-center p-3">
+    <table>
+      <tr>
+        <td>
+          País
+        </td>
+        <td>
+          {{ geoLocalizacion.country }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ciudad
+        </td>
+        <td>
+          {{ geoLocalizacion.city }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Código Postal
+        </td>
+        <td>
+          {{ geoLocalizacion.postal }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Región
+        </td>
+        <td>
+          {{ geoLocalizacion.region }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ubicación
+        </td>
+        <td>
+          <a class="btn btn-primary" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" ><i class="bi bi-geo-alt-fill"> Ubicación</i></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Datos ISP
+        </td>
+        <td>
+          {{ geoLocalizacion.hostname }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Zona horaria
+        </td>
+        <td>
+          {{ geoLocalizacion.timezone }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Compañía
+        </td>
+        <td>
+          {{ geoLocalizacion.org }}
+        </td>
+      </tr>
+    </table>
+    <!-- <ul *ngIf="geoLocalizacion" class="list-group">
+      <li class="list-group-item"><span>País:</span> {{ geoLocalizacion.country }}</li>
+      <li class="list-group-item"><span>Ciudad:</span> {{ geoLocalizacion.city }}</li>
+      <li class="list-group-item"><span>C.P:</span> {{ geoLocalizacion.postal }}</li>
+      <li class="list-group-item"><span>Región:</span> {{ geoLocalizacion.region }}</li>
+      <li class="list-group-item"><span>Ubicación:</span> <a class="btn btn-primary" target="_blank" [href]="'https://www.google.es/maps/place/' + this.geoLocalizacion.loc" ><i class="bi bi-geo-alt-fill"> Ubicación</i></a></li>
+      <li class="list-group-item"><span>Datos ISP</span> {{ geoLocalizacion.hostname }}</li>
+      <li class="list-group-item"><span>Zona horaria:</span> {{ geoLocalizacion.timezone }}</li>
+      <li class="list-group-item"><span>Compañía:</span> {{ geoLocalizacion.org }}</li>
+    </ul> -->
   </div>
 </div>
+
+<footer class="bg-dark text-center text-white py-3 mt-4">
+  <div class="container">
+    <p class="mb-0">by Jesus Sotoca</p>
+  </div>
+</footer>
